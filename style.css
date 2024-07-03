@@ -2,5 +2,9 @@
 
 td {
     border: 1px solid black;
-    padding: 15px;
+    padding: 10px;
+}
+
+table {
+    border-spacing: 0;
 }

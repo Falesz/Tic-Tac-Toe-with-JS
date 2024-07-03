@@ -2,9 +2,9 @@
 const gameTable = document.getElementById("gameTable")
 
 function initTable() {
-    gameTable.innerHTML += "<tr><td></td><td></td><td></td></tr>";
-    gameTable.innerHTML += "<tr><td></td><td></td><td></td></tr>";
-    gameTable.innerHTML += "<tr><td></td><td></td><td></td></tr>";
+    gameTable.innerHTML += "<tr><td>X</td><td>X</td><td>X</td></tr>";
+    gameTable.innerHTML += "<tr><td>X</td><td>X</td><td>X</td></tr>";
+    gameTable.innerHTML += "<tr><td>X</td><td>X</td><td>X</td></tr>";
 
     // useful stuff:
     // gameTable.rows.length
