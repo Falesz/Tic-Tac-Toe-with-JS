@@ -11,8 +11,6 @@ function initTable() {
     // gameTable.rows[i]
     // gameTable.rows.cells.length
     // gameTable.rows.cells[i]
-
-
 }
 
 initTable();
