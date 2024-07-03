@@ -2,6 +2,8 @@
 const gameTable = document.getElementById("gameTable");
 let playerXTurn = true;
 
+const playerMoved = new Event("playerMoved"); 
+
 function initTable() {
     gameTable.innerHTML += "<tr><td></td><td></td><td></td></tr>";
     gameTable.innerHTML += "<tr><td></td><td></td><td></td></tr>";
@@ -21,13 +23,36 @@ function addEventListenersToGameTableCells() {
                 if (event.target.innerText.length != 0) {
                     return;
                 }
-                
+
                 event.target.innerText = playerXTurn ? "X" : "O";
                 playerXTurn = !playerXTurn;
+                document.dispatchEvent(playerMoved);
             });
         }
     }
 }
 
+function checkForGameOver() {
+    // Check rows
+    /* outer:
+    for (i = 0; i < gameTable.rows.length; ++i) {
+        for (j = 1; j < gameTable.rows[i].cells.length; ++j) {
+            if (gameTable.rows[i].cells[j].innerText !== gameTable.rows[i].cells[0].innerText) {
+                continue outer;
+            }
+        }
+        return true;
+    } */
+
+    return false;
+}
+
+// ----------------------------------------------------------------------------------------------------------
+// Main script
+
 initTable();
 addEventListenersToGameTableCells();
+document.addEventListener("playerMoved", () => {
+    let gameOver = checkForGameOver();
+    console.log("Game is over: " + gameOver);
+})
