@@ -1,0 +1,6 @@
+/* Main stylesheet for the Tic-Tac-Toe game */
+
+td {
+    border: 1px solid black;
+    padding: 15px;
+}
